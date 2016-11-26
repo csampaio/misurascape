@@ -3,6 +3,48 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Eventsheet1</name>
     <events>
+        <event-group description="" sid="528693169926798" title="Paralax" />
+        <event-block sid="726423353914555">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="963783479941175" type="Background">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-1 * (Background.Width - WindowWidth)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="837745880455402" type="Background">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="276181849378241">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="456862879990951" type="Ground">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-(ground.Width - WindowWidth)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="771227730546623" type="Ground">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="262048518505703">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="600470665778769" type="Foreground">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-(Foreground.Width - WindowWidth)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="145729096583921" type="Foreground">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+    <events>
         <event-block sid="692326605129186">
             <conditions>
                 <condition behavior="Platform" id="5" name="On jump" sid="280237648905726" type="Sprite2" />
