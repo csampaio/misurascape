@@ -2,5 +2,86 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Eventsheet1</name>
-    <events />
+    <events>
+        <event-block sid="692326605129186">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="280237648905726" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="721506641061644" type="Sprite2">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="309910878540151" type="Sprite2">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="622577587670633">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="709071422804014" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="871934269120875" type="Sprite2">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="826953836691658">
+            <conditions>
+                <condition behavior="Platform" id="6" name="On fall" sid="563303547395107" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="884611491745362" type="Sprite2">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="120627393353027">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="119473885747939" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="649277274139377" type="Sprite2">
+                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="611937134303351">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="669031169536536" type="Sprite2">
+                    <param id="0" name="Object">obst</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="764903409476766" type="Sprite2">
+                    <param id="0" name="Animation">&quot;Roll&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="985940295538449" type="obst">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="676446459771733">
+            <conditions>
+                <condition id="4" name="On finished" sid="617114707690722" type="Sprite2">
+                    <param id="0" name="Animation">&quot;Roll&quot;</param>
+                </condition>
+                <condition id="2" name="Is playing" sid="854105427206142" type="Sprite2">
+                    <param id="0" name="Animation">&quot;Roll&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="742393281554387" type="obst">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="235488515517115" type="Sprite2">
+                    <param id="0" name="Animation">&quot;Run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
