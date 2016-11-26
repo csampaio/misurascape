@@ -9,8 +9,13 @@
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>13mywe4r4r7dv</unique-id>
     <saved-with-version>23900</saved-with-version>
-    <used-plugins />
-    <used-behaviors />
+    <used-plugins>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+    </used-behaviors>
     <used-effects />
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -37,7 +42,39 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder />
+    <object-folder>
+        <object-type name="Background" sid="834654354224063">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="863601890189770">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="524271170611487" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\projetos\PosUEA\misurascape\Assets\forestBg.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Ground" sid="199377800166505">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="370425777708590">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\sand.jpg" />
+        </object-type>
+        <object-type name="Foreground" sid="428647634611259">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="389933626653096">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\grass2.png" />
+        </object-type>
+    </object-folder>
     <families />
     <layout-folder>
         <layout>Layout1.xml</layout>
