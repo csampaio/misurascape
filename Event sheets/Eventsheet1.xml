@@ -43,8 +43,6 @@
                 </action>
             </actions>
         </event-block>
-    </events>
-    <events>
         <event-block sid="692326605129186">
             <conditions>
                 <condition behavior="Platform" id="5" name="On jump" sid="280237648905726" type="Sprite2" />

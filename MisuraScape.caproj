@@ -76,8 +76,6 @@
             </behaviors>
             <texture original-source="E:\projetos\PosUEA\misurascape\Assets\grass2.png" />
         </object-type>
-    </object-folder>
-    <object-folder>
         <object-type name="Sprite" sid="506967693683804">
             <plugin id="Sprite" />
             <animation-folder>
@@ -226,7 +224,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="ground" sid="244537112844536">
+        <object-type name="ground2" sid="244537112844536">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Solid" sid="115699392046457">

@@ -114,9 +114,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-            </instances>
-            <instances>
-                <instance type="Sprite2" uid="0">
+                <instance type="Sprite2" uid="2">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Run</initial-animation>
@@ -142,11 +140,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>194</x>
-                        <y>422</y>
+                        <x>215.529190063</x>
+                        <y>328.114990234</y>
                         <z>0</z>
-                        <width>89.173034668</width>
-                        <height>90.834640503</height>
+                        <width>132.142456055</width>
+                        <height>134.604736328</height>
                         <depth>0</depth>
                         <hotspotX>0.501035213</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -154,7 +152,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ground" uid="1">
+                <instance type="ground2" uid="3">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -168,11 +166,11 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
-                    <blend-mode>0</blend-mode>
+                    <blend-mode>4</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>400</x>
-                        <y>595</y>
+                        <y>523</y>
                         <z>0</z>
                         <width>874</width>
                         <height>250</height>
@@ -183,7 +181,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="obst" uid="2">
+                <instance type="obst" uid="4">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -210,8 +208,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>774</x>
-                        <y>460</y>
+                        <x>551</x>
+                        <y>383</y>
                         <z>0</z>
                         <width>29.883106232</width>
                         <height>29.883106232</height>
@@ -241,7 +239,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Foreground" uid="2">
+                <instance type="Foreground" uid="5">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
