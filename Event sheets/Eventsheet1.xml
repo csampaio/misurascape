@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Eventsheet1</name>
     <events>
+        <variable constant="0" name="isRolling" sid="608528306790928" static="0" type="number">0</variable>
         <event-group description="" sid="528693169926798" title="Paralax" />
         <event-block sid="726423353914555">
             <conditions>
@@ -95,12 +96,25 @@
                 </condition>
             </conditions>
             <actions>
+                <action id="-9" name="Set value" sid="183145150356588" type="System">
+                    <param id="0" name="Variable">isRolling</param>
+                    <param id="1" name="Value">1</param>
+                </action>
                 <action id="4" name="Set animation" sid="764903409476766" type="Sprite2">
                     <param id="0" name="Animation">&quot;Roll&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="11" name="Set collisions enabled" sid="985940295538449" type="obst">
                     <param id="0" name="Collisions">0</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="494765761597534" type="Sprite3">
+                    <param id="0" name="Speed">10</param>
+                </action>
+                <action id="-16" name="Wait" sid="902305447607699" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="620435103012011" type="Sprite3">
+                    <param id="0" name="Speed">0</param>
                 </action>
             </actions>
         </event-block>
@@ -109,17 +123,50 @@
                 <condition id="4" name="On finished" sid="617114707690722" type="Sprite2">
                     <param id="0" name="Animation">&quot;Roll&quot;</param>
                 </condition>
-                <condition id="2" name="Is playing" sid="854105427206142" type="Sprite2">
-                    <param id="0" name="Animation">&quot;Roll&quot;</param>
-                </condition>
             </conditions>
             <actions>
+                <action id="-9" name="Set value" sid="323080399875530" type="System">
+                    <param id="0" name="Variable">isRolling</param>
+                    <param id="1" name="Value">0</param>
+                </action>
                 <action id="11" name="Set collisions enabled" sid="742393281554387" type="obst">
                     <param id="0" name="Collisions">1</param>
                 </action>
                 <action id="4" name="Set animation" sid="235488515517115" type="Sprite2">
                     <param id="0" name="Animation">&quot;Run&quot;</param>
                     <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="216089354326599">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="141357625465334" type="System">
+                    <param id="0" name="Interval (seconds)">random(3,7)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="264567390984062" type="System">
+                    <param id="0" name="Object to create">obst</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">1060</param>
+                    <param id="3" name="Y">383</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="105193025870835">
+            <conditions>
+                <condition id="2" name="Key is down" sid="346085779102962" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="530389342207252" type="System">
+                    <param id="0" name="Variable">isRolling</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="609259966770040" type="Sprite2">
+                    <param id="0" name="Control">2</param>
                 </action>
             </actions>
         </event-block>
