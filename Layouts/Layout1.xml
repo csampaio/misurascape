@@ -4,7 +4,7 @@
     <sid>333700459466463</sid>
     <event-sheet>Eventsheet1</event-sheet>
     <size>
-        <width>1000</width>
+        <width>2000</width>
         <height>800</height>
     </size>
     <margins>
@@ -15,7 +15,7 @@
     <layers>
         <layer name="background" sid="450908218318555">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>0,0,0</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -39,7 +39,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>-50</speed>
+                                <speed>0</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -51,11 +51,33 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>0</x>
+                        <x>-5</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1282</width>
-                        <height>802</height>
+                        <width>810</width>
+                        <height>230</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Water" uid="8">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-5</x>
+                        <y>227</y>
+                        <z>0</z>
+                        <width>810</width>
+                        <height>230</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -99,14 +121,14 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
-                    <blend-mode>0</blend-mode>
+                    <blend-mode>9</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1</x>
-                        <y>315</y>
+                        <x>0</x>
+                        <y>373</y>
                         <z>0</z>
-                        <width>1282</width>
-                        <height>493</height>
+                        <width>1600</width>
+                        <height>149</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -169,11 +191,11 @@
                     <blend-mode>4</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>480</x>
-                        <y>519</y>
+                        <x>476</x>
+                        <y>540</y>
                         <z>0</z>
                         <width>1062</width>
-                        <height>250</height>
+                        <height>156</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -259,7 +281,7 @@
         </layer>
         <layer name="foreground" sid="492039620138745">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>0,0,0</background-color>
             <transparent>1</transparent>
             <parallax>
                 <x>1</x>
@@ -290,14 +312,14 @@
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
-                    <blend-mode>0</blend-mode>
+                    <blend-mode>8</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>4</x>
-                        <y>202</y>
+                        <x>0</x>
+                        <y>408</y>
                         <z>0</z>
-                        <width>1289</width>
-                        <height>512</height>
+                        <width>1600</width>
+                        <height>179</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

@@ -55,7 +55,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="524271170611487" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\projetos\PosUEA\misurascape\Assets\forestBg.jpg" />
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\projetos\PosUEA\misurascape\Assets\ceu.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -66,7 +66,7 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\sand.jpg" />
+            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\areia.png" />
         </object-type>
         <object-type name="Foreground" sid="428647634611259">
             <plugin id="TiledBg" />
@@ -75,7 +75,7 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\grass2.png" />
+            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\foreground.png" />
         </object-type>
         <object-type name="Sprite" sid="506967693683804">
             <plugin id="Sprite" />
@@ -252,6 +252,21 @@
         </object-type>
         <object-type name="Keyboard" sid="164819091595501">
             <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Water" sid="741745990952824">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="838751794738085" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="E:\projetos\PosUEA\misurascape\Assets\agua.png">
+                        <collision-poly>
+                            <point x="0.00161204" y="0.00554529" />
+                            <point x="0.998388" y="0.00554529" />
+                            <point x="0.997851" y="0.992606" />
+                            <point x="0.00161204" y="0.994455" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
