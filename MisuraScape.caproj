@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
@@ -348,6 +349,12 @@
         <object-type name="Sound" sid="912126887294083">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="Distancia" sid="758868091817790">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Distancia" sid="121974315615650" type="number" />
+            </instance-variables>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -385,7 +392,10 @@
         <file name="Creature Growl 07.m4a" />
         <file name="Creature Growl 07.ogg" />
     </sounds-folder>
-    <music-folder />
+    <music-folder>
+        <file name="FFXV_-_Dungeon_Theme.m4a" />
+        <file name="FFXV_-_Dungeon_Theme.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Eventsheet1</name>
     <events>
+        <variable constant="0" name="MaxObstTime" sid="816353066657916" static="0" type="number">7</variable>
         <variable constant="0" name="mapinguaScale" sid="136007230488023" static="0" type="number">1</variable>
         <variable constant="0" name="isDead" sid="721843819591116" static="0" type="number">0</variable>
         <event-group description="" sid="528693169926798" title="Paralax">
@@ -164,7 +165,7 @@
                 <event-block sid="216089354326599">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="141357625465334" type="System">
-                            <param id="0" name="Interval (seconds)">random(2,7)</param>
+                            <param id="0" name="Interval (seconds)">random(2,MaxObstTime)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -174,6 +175,9 @@
                             <param id="2" name="X">1060</param>
                             <param id="3" name="Y">442</param>
                         </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="405372964505086" type="Obstacle">
+                            <param id="0" name="Speed">Ground.Bullet.Speed</param>
+                        </action>
                         <action id="5" name="Set frame" sid="175615267347526" type="Obstacle">
                             <param id="0" name="Frame number">int(random(0,2))</param>
                         </action>
@@ -181,113 +185,179 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="881008996444710">
+        <event-group description="" sid="684378264819106" title="Death">
+            <sub-events>
+                <event-block sid="881008996444710">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="159014528745639" type="Mapinguari">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="981588158401455" type="Player" />
+                        <action id="-9" name="Set value" sid="890907727736231" type="System">
+                            <param id="0" name="Variable">isDead</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="6" name="Stop" sid="904719092673161" type="Sound">
+                            <param id="0" name="Tag">&quot;Respiração&quot;</param>
+                        </action>
+                        <action id="25" name="Play at object" sid="906841438699336" type="Sound">
+                            <param id="0" name="Audio file">Screams Male 02</param>
+                            <param id="1" name="Loop">0</param>
+                            <param id="2" name="Volume">0</param>
+                            <param id="3" name="Object">Player</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="25" name="Play at object" sid="151007614117532" type="Sound">
+                            <param id="0" name="Audio file">Creature Growl 07</param>
+                            <param id="1" name="Loop">0</param>
+                            <param id="2" name="Volume">0</param>
+                            <param id="3" name="Object">Mapinguari</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="156966483916084">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="907222292197076" type="System">
+                            <param id="0" name="Interval (seconds)">0.25</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="100322005756606" type="System">
+                            <param id="0" name="Variable">isDead</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="128659399925677" type="System">
+                            <param id="0" name="Variable">mapinguaScale</param>
+                            <param id="1" name="Value">MapinguaScale + 0.25</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="247713087912208" type="Mapinguari">
+                            <param id="0" name="Scale">MapinguaScale</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="958306267986136">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="102679671140892" type="System">
+                            <param id="0" name="Variable">isDead</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="433768061024423" type="Ground">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="354132255419202" type="Foreground">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="596111096093158" type="Obstacle">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="957368961994382" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-21" name="Reset global variables" sid="250320276998623" type="System" />
+                        <action id="33" name="Stop all" sid="989169606851827" type="Sound" />
+                        <action id="-26" name="Restart layout" sid="324814711593500" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="119961848922588" title="Init">
+            <sub-events>
+                <event-block sid="139351547828369">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="559864618220340" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="336729587582744" type="Player">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="168968039426796" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="197075595726560" type="Player">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="188394726790318" type="Sound">
+                            <param id="0" name="Audio file">Night_Sounds_-_Crickets-Lisa_Redfern-591005346</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-50</param>
+                            <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
+                        </action>
+                        <action id="4" name="Preload" sid="751943638815390" type="Sound">
+                            <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
+                        </action>
+                        <action id="25" name="Play at object" sid="222971290398847" type="Sound">
+                            <param id="0" name="Audio file">Creature Breath 02</param>
+                            <param id="1" name="Loop">1</param>
+                            <param id="2" name="Volume">0</param>
+                            <param id="3" name="Object">Mapinguari</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;Respiração&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="136935434417272" type="Sound">
+                            <param id="0" name="Audio file">FFXV_-_Dungeon_Theme</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Musica&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="682384533302299">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="159014528745639" type="Mapinguari">
-                    <param id="0" name="Object">Player</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="981588158401455" type="Player" />
-                <action id="-9" name="Set value" sid="890907727736231" type="System">
-                    <param id="0" name="Variable">isDead</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="6" name="Stop" sid="904719092673161" type="Sound">
-                    <param id="0" name="Tag">&quot;Respiração&quot;</param>
-                </action>
-                <action id="25" name="Play at object" sid="906841438699336" type="Sound">
-                    <param id="0" name="Audio file">Screams Male 02</param>
-                    <param id="1" name="Loop">0</param>
-                    <param id="2" name="Volume">0</param>
-                    <param id="3" name="Object">Player</param>
-                    <param id="4" name="Inner angle">360</param>
-                    <param id="5" name="Outer angle">360</param>
-                    <param id="6" name="Outer gain">0</param>
-                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-                <action id="25" name="Play at object" sid="151007614117532" type="Sound">
-                    <param id="0" name="Audio file">Creature Growl 07</param>
-                    <param id="1" name="Loop">0</param>
-                    <param id="2" name="Volume">0</param>
-                    <param id="3" name="Object">Mapinguari</param>
-                    <param id="4" name="Inner angle">360</param>
-                    <param id="5" name="Outer angle">360</param>
-                    <param id="6" name="Outer gain">0</param>
-                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="156966483916084">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="907222292197076" type="System">
+                <condition id="-6" name="Every X seconds" sid="535343899354572" type="System">
                     <param id="0" name="Interval (seconds)">0.25</param>
                 </condition>
-                <condition id="-14" name="Compare variable" sid="100322005756606" type="System">
+                <condition id="-14" name="Compare variable" sid="350507189966573" type="System">
                     <param id="0" name="Variable">isDead</param>
                     <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
+                    <param id="2" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="128659399925677" type="System">
-                    <param id="0" name="Variable">mapinguaScale</param>
-                    <param id="1" name="Value">MapinguaScale + 0.25</param>
+                <action id="-11" name="Add to" sid="594870553779933" type="Distancia">
+                    <param id="0" name="Instance variable">Distancia</param>
+                    <param id="1" name="Value">1</param>
                 </action>
-                <action id="9" name="Set scale" sid="247713087912208" type="Mapinguari">
-                    <param id="0" name="Scale">MapinguaScale</param>
+                <action id="0" name="Set text" sid="697160069168395" type="Distancia">
+                    <param id="0" name="Text">Self.Distancia &amp; &quot;m&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="958306267986136">
+        <event-block sid="263635575088569">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="102679671140892" type="System">
-                    <param id="0" name="Variable">isDead</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
+                <condition id="-6" name="Every X seconds" sid="141377960189870" type="System">
+                    <param id="0" name="Interval (seconds)">10</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-16" name="Wait" sid="957368961994382" type="System">
-                    <param id="0" name="Seconds">5</param>
+                <action behavior="Bullet" id="0" name="Set speed" sid="525915615586398" type="Ground">
+                    <param id="0" name="Speed">Self.Bullet.Speed + 10</param>
                 </action>
-                <action id="-21" name="Reset global variables" sid="250320276998623" type="System" />
-                <action id="33" name="Stop all" sid="989169606851827" type="Sound" />
-                <action id="-26" name="Restart layout" sid="324814711593500" type="System" />
-            </actions>
-        </event-block>
-        <event-block sid="139351547828369">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="559864618220340" type="System" />
-            </conditions>
-            <actions>
-                <action behavior="Bullet" id="0" name="Set speed" sid="336729587582744" type="Player">
-                    <param id="0" name="Speed">200</param>
+                <action behavior="Bullet" id="0" name="Set speed" sid="374754955127688" type="Foreground">
+                    <param id="0" name="Speed">Self.Bullet.Speed + 10</param>
                 </action>
-                <action id="-16" name="Wait" sid="168968039426796" type="System">
-                    <param id="0" name="Seconds">2</param>
+                <action behavior="Bullet" id="0" name="Set speed" sid="803531395760029" type="Obstacle">
+                    <param id="0" name="Speed">Self.Bullet.Speed + 10</param>
                 </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="197075595726560" type="Player">
-                    <param id="0" name="Speed">0</param>
-                </action>
-                <action id="0" name="Play" sid="188394726790318" type="Sound">
-                    <param id="0" name="Audio file">Night_Sounds_-_Crickets-Lisa_Redfern-591005346</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-50</param>
-                    <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
-                </action>
-                <action id="4" name="Preload" sid="751943638815390" type="Sound">
-                    <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
-                </action>
-                <action id="25" name="Play at object" sid="222971290398847" type="Sound">
-                    <param id="0" name="Audio file">Creature Breath 02</param>
-                    <param id="1" name="Loop">1</param>
-                    <param id="2" name="Volume">0</param>
-                    <param id="3" name="Object">Mapinguari</param>
-                    <param id="4" name="Inner angle">360</param>
-                    <param id="5" name="Outer angle">360</param>
-                    <param id="6" name="Outer gain">0</param>
-                    <param id="7" name="Tag (optional)">&quot;Respiração&quot;</param>
+                <action id="-11" name="Subtract from" sid="634017955806845" type="System">
+                    <param id="0" name="Variable">MaxObstTime</param>
+                    <param id="1" name="Value">0.5</param>
                 </action>
             </actions>
         </event-block>
