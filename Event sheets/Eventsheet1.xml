@@ -193,6 +193,29 @@
                     <param id="0" name="Variable">isDead</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="6" name="Stop" sid="904719092673161" type="Sound">
+                    <param id="0" name="Tag">&quot;Respiração&quot;</param>
+                </action>
+                <action id="25" name="Play at object" sid="906841438699336" type="Sound">
+                    <param id="0" name="Audio file">Screams Male 02</param>
+                    <param id="1" name="Loop">0</param>
+                    <param id="2" name="Volume">0</param>
+                    <param id="3" name="Object">Player</param>
+                    <param id="4" name="Inner angle">360</param>
+                    <param id="5" name="Outer angle">360</param>
+                    <param id="6" name="Outer gain">0</param>
+                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="25" name="Play at object" sid="151007614117532" type="Sound">
+                    <param id="0" name="Audio file">Creature Growl 07</param>
+                    <param id="1" name="Loop">0</param>
+                    <param id="2" name="Volume">0</param>
+                    <param id="3" name="Object">Mapinguari</param>
+                    <param id="4" name="Inner angle">360</param>
+                    <param id="5" name="Outer angle">360</param>
+                    <param id="6" name="Outer gain">0</param>
+                    <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="156966483916084">
@@ -255,6 +278,16 @@
                 </action>
                 <action id="4" name="Preload" sid="751943638815390" type="Sound">
                     <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
+                </action>
+                <action id="25" name="Play at object" sid="222971290398847" type="Sound">
+                    <param id="0" name="Audio file">Creature Breath 02</param>
+                    <param id="1" name="Loop">1</param>
+                    <param id="2" name="Volume">0</param>
+                    <param id="3" name="Object">Mapinguari</param>
+                    <param id="4" name="Inner angle">360</param>
+                    <param id="5" name="Outer angle">360</param>
+                    <param id="6" name="Outer gain">0</param>
+                    <param id="7" name="Tag (optional)">&quot;Respiração&quot;</param>
                 </action>
             </actions>
         </event-block>
