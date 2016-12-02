@@ -102,6 +102,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="978633804349012" type="Sound">
+                            <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Hit&quot;</param>
+                        </action>
                         <action id="4" name="Set animation" sid="764903409476766" type="Player">
                             <param id="0" name="Animation">&quot;Roll&quot;</param>
                             <param id="1" name="From">1</param>
@@ -223,6 +229,7 @@
                     <param id="0" name="Seconds">5</param>
                 </action>
                 <action id="-21" name="Reset global variables" sid="250320276998623" type="System" />
+                <action id="33" name="Stop all" sid="989169606851827" type="Sound" />
                 <action id="-26" name="Restart layout" sid="324814711593500" type="System" />
             </actions>
         </event-block>
@@ -239,6 +246,15 @@
                 </action>
                 <action behavior="Bullet" id="0" name="Set speed" sid="197075595726560" type="Player">
                     <param id="0" name="Speed">0</param>
+                </action>
+                <action id="0" name="Play" sid="188394726790318" type="Sound">
+                    <param id="0" name="Audio file">Night_Sounds_-_Crickets-Lisa_Redfern-591005346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-50</param>
+                    <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
+                </action>
+                <action id="4" name="Preload" sid="751943638815390" type="Sound">
+                    <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
                 </action>
             </actions>
         </event-block>

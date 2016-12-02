@@ -10,6 +10,7 @@
     <unique-id>13mywe4r4r7dv</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -270,8 +271,7 @@
                     <frame duration="1" hotspotX="0.517544" hotspotY="0.463035">
                         <collision-poly>
                             <point x="0.45614" y="0.303502" />
-                            <point x="0.77193" y="0.00972761" />
-                            <point x="0.988304" y="0.108949" />
+                            <point x="0.821638" y="0.357977" />
                             <point x="0.733918" y="0.5" />
                             <point x="0.590643" y="0.727626" />
                             <point x="0.5" y="0.892996" />
@@ -281,14 +281,11 @@
                     </frame>
                     <frame duration="1" hotspotX="0.498542" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.0145773" y="0.124514" />
-                            <point x="0.244898" y="0.00194551" />
-                            <point x="0.542274" y="0.305447" />
-                            <point x="0.708455" y="0.5" />
-                            <point x="0.973761" y="0.821012" />
-                            <point x="0.498542" y="0.894942" />
-                            <point x="0.408163" y="0.727626" />
-                            <point x="0.265306" y="0.5" />
+                            <point x="0.214397" y="0.420233" />
+                            <point x="0.579962" y="0.381323" />
+                            <point x="0.733918" y="0.5" />
+                            <point x="0.975483" y="0.871595" />
+                            <point x="0.5" y="0.892996" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -348,6 +345,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sound" sid="912126887294083">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -358,8 +358,27 @@
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="7" />
+        <global-instance type="Sound" uid="9">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="Night_Sounds_-_Crickets-Lisa_Redfern-591005346.m4a" />
+        <file name="Night_Sounds_-_Crickets-Lisa_Redfern-591005346.ogg" />
+        <file name="Grunts (as Punched)  Male.m4a" />
+        <file name="Grunts (as Punched)  Male.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">
