@@ -11,7 +11,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Layout1</layout>
-        <event-sheet active="1" order="1">Eventsheet1</event-sheet>
+        <layout order="2">Splash</layout>
+        <event-sheet order="1">Eventsheet1</event-sheet>
+        <event-sheet active="1" order="3">SplashEvent</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -35,5 +37,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Obstacle/" />
         <folder expanded="1" path="animation-folder/Mapinguari/" />
         <folder expanded="1" path="animation-folder/Water/" />
+        <folder expanded="1" path="animation-folder/Splash/" />
     </folders-expanded>
 </c2uistate>

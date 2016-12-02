@@ -355,13 +355,23 @@
                 <instance-variable name="Distancia" sid="121974315615650" type="number" />
             </instance-variables>
         </object-type>
+        <object-type name="Splash" sid="896703965283189">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="781932496773224" speed="5">
+                    <frame duration="1" hotspotX="-0.00125" hotspotY="-0.00166667" original-source="E:\projetos\PosUEA\misurascape\Assets\splash.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
+        <layout>Splash.xml</layout>
         <layout>Layout1.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Eventsheet1.xml</event-sheet>
+        <event-sheet>SplashEvent.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="7" />
@@ -391,6 +401,8 @@
         <file name="Screams Male 02.ogg" />
         <file name="Creature Growl 07.m4a" />
         <file name="Creature Growl 07.ogg" />
+        <file name="wind.m4a" />
+        <file name="wind.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="FFXV_-_Dungeon_Theme.m4a" />
