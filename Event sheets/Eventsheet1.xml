@@ -3,170 +3,242 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Eventsheet1</name>
     <events>
-        <variable constant="0" name="isRolling" sid="608528306790928" static="0" type="number">0</variable>
-        <event-group description="" sid="528693169926798" title="Paralax" />
-        <event-block sid="726423353914555">
+        <variable constant="0" name="mapinguaScale" sid="136007230488023" static="0" type="number">1</variable>
+        <variable constant="0" name="isDead" sid="721843819591116" static="0" type="number">0</variable>
+        <event-group description="" sid="528693169926798" title="Paralax">
+            <sub-events>
+                <event-block sid="726423353914555">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="963783479941175" type="Background">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-1 * (Background.Width - WindowWidth)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="837745880455402" type="Background">
+                            <param id="0" name="X">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="276181849378241">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="456862879990951" type="Ground">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-(ground.Width - WindowWidth)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="771227730546623" type="Ground">
+                            <param id="0" name="X">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="262048518505703">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="600470665778769" type="Foreground">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-(Foreground.Width - WindowWidth)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="145729096583921" type="Foreground">
+                            <param id="0" name="X">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="845320171379304" title="Player">
+            <sub-events>
+                <event-block sid="692326605129186">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="280237648905726" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="721506641061644" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="309910878540151" type="Player">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="622577587670633">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="709071422804014" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="871934269120875" type="Player">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="826953836691658">
+                    <conditions>
+                        <condition behavior="Platform" id="6" name="On fall" sid="563303547395107" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="884611491745362" type="Player">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="120627393353027">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="119473885747939" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="649277274139377" type="Player">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="611937134303351">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="669031169536536" type="Player">
+                            <param id="0" name="Object">Obstacle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="764903409476766" type="Player">
+                            <param id="0" name="Animation">&quot;Roll&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="985940295538449" type="Obstacle">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="494765761597534" type="Mapinguari">
+                            <param id="0" name="Speed">50</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="902305447607699" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="620435103012011" type="Mapinguari">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="676446459771733">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="617114707690722" type="Player">
+                            <param id="0" name="Animation">&quot;Roll&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="742393281554387" type="Obstacle">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="235488515517115" type="Player">
+                            <param id="0" name="Animation">&quot;Run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="105193025870835">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="346085779102962" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="174654744575974" type="Player">
+                            <param id="0" name="Animation">&quot;Roll&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="609259966770040" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="116920417881427" title="Obstacles">
+            <sub-events>
+                <event-block sid="216089354326599">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="141357625465334" type="System">
+                            <param id="0" name="Interval (seconds)">random(2,7)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="264567390984062" type="System">
+                            <param id="0" name="Object to create">Obstacle</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">1060</param>
+                            <param id="3" name="Y">442</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="175615267347526" type="Obstacle">
+                            <param id="0" name="Frame number">int(random(0,2))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="881008996444710">
             <conditions>
-                <condition id="-1" name="Compare X" sid="963783479941175" type="Background">
-                    <param id="0" name="Comparison">2</param>
-                    <param id="1" name="X co-ordinate">-1 * (Background.Width - WindowWidth)</param>
+                <condition id="0" name="On collision with another object" sid="159014528745639" type="Mapinguari">
+                    <param id="0" name="Object">Player</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-1" name="Set X" sid="837745880455402" type="Background">
-                    <param id="0" name="X">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="276181849378241">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="456862879990951" type="Ground">
-                    <param id="0" name="Comparison">2</param>
-                    <param id="1" name="X co-ordinate">-(ground.Width - WindowWidth)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="771227730546623" type="Ground">
-                    <param id="0" name="X">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="262048518505703">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="600470665778769" type="Foreground">
-                    <param id="0" name="Comparison">2</param>
-                    <param id="1" name="X co-ordinate">-(Foreground.Width - WindowWidth)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="145729096583921" type="Foreground">
-                    <param id="0" name="X">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="692326605129186">
-            <conditions>
-                <condition behavior="Platform" id="5" name="On jump" sid="280237648905726" type="Sprite2" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="721506641061644" type="Sprite2">
-                    <param id="0" name="Animation">&quot;Jump&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="5" name="Set frame" sid="309910878540151" type="Sprite2">
-                    <param id="0" name="Frame number">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="622577587670633">
-            <conditions>
-                <condition behavior="Platform" id="7" name="On stopped" sid="709071422804014" type="Sprite2" />
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="871934269120875" type="Sprite2">
-                    <param id="0" name="Frame number">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="826953836691658">
-            <conditions>
-                <condition behavior="Platform" id="6" name="On fall" sid="563303547395107" type="Sprite2" />
-            </conditions>
-            <actions>
-                <action id="5" name="Set frame" sid="884611491745362" type="Sprite2">
-                    <param id="0" name="Frame number">2</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="120627393353027">
-            <conditions>
-                <condition behavior="Platform" id="9" name="On landed" sid="119473885747939" type="Sprite2" />
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="649277274139377" type="Sprite2">
-                    <param id="0" name="Animation">&quot;Run&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="611937134303351">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="669031169536536" type="Sprite2">
-                    <param id="0" name="Object">obst</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="183145150356588" type="System">
-                    <param id="0" name="Variable">isRolling</param>
+                <action id="-9" name="Destroy" sid="981588158401455" type="Player" />
+                <action id="-9" name="Set value" sid="890907727736231" type="System">
+                    <param id="0" name="Variable">isDead</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="4" name="Set animation" sid="764903409476766" type="Sprite2">
-                    <param id="0" name="Animation">&quot;Roll&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="985940295538449" type="obst">
-                    <param id="0" name="Collisions">0</param>
-                </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="494765761597534" type="Sprite3">
-                    <param id="0" name="Speed">10</param>
-                </action>
-                <action id="-16" name="Wait" sid="902305447607699" type="System">
-                    <param id="0" name="Seconds">1.0</param>
-                </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="620435103012011" type="Sprite3">
-                    <param id="0" name="Speed">0</param>
-                </action>
             </actions>
         </event-block>
-        <event-block sid="676446459771733">
+        <event-block sid="156966483916084">
             <conditions>
-                <condition id="4" name="On finished" sid="617114707690722" type="Sprite2">
-                    <param id="0" name="Animation">&quot;Roll&quot;</param>
+                <condition id="-6" name="Every X seconds" sid="907222292197076" type="System">
+                    <param id="0" name="Interval (seconds)">0.25</param>
                 </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="323080399875530" type="System">
-                    <param id="0" name="Variable">isRolling</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="742393281554387" type="obst">
-                    <param id="0" name="Collisions">1</param>
-                </action>
-                <action id="4" name="Set animation" sid="235488515517115" type="Sprite2">
-                    <param id="0" name="Animation">&quot;Run&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="216089354326599">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="141357625465334" type="System">
-                    <param id="0" name="Interval (seconds)">random(3,7)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="264567390984062" type="System">
-                    <param id="0" name="Object to create">obst</param>
-                    <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">1060</param>
-                    <param id="3" name="Y">383</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="105193025870835">
-            <conditions>
-                <condition id="2" name="Key is down" sid="346085779102962" type="Keyboard">
-                    <param id="0" name="Key">32 (Space)</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="530389342207252" type="System">
-                    <param id="0" name="Variable">isRolling</param>
+                <condition id="-14" name="Compare variable" sid="100322005756606" type="System">
+                    <param id="0" name="Variable">isDead</param>
                     <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
+                    <param id="2" name="Value">1</param>
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="609259966770040" type="Sprite2">
-                    <param id="0" name="Control">2</param>
+                <action id="-9" name="Set value" sid="128659399925677" type="System">
+                    <param id="0" name="Variable">mapinguaScale</param>
+                    <param id="1" name="Value">MapinguaScale + 0.25</param>
+                </action>
+                <action id="9" name="Set scale" sid="247713087912208" type="Mapinguari">
+                    <param id="0" name="Scale">MapinguaScale</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="958306267986136">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="102679671140892" type="System">
+                    <param id="0" name="Variable">isDead</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="957368961994382" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action id="-21" name="Reset global variables" sid="250320276998623" type="System" />
+                <action id="-26" name="Restart layout" sid="324814711593500" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="139351547828369">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="559864618220340" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="336729587582744" type="Player">
+                    <param id="0" name="Speed">200</param>
+                </action>
+                <action id="-16" name="Wait" sid="168968039426796" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="197075595726560" type="Player">
+                    <param id="0" name="Speed">0</param>
                 </action>
             </actions>
         </event-block>
