@@ -436,37 +436,8 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Acai" sid="236341940923620">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="771673219592495">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="527056365886305" speed="5">
-                    <frame duration="1" hotspotX="0.502146" hotspotY="0.5" original-source="G:\Pós Games\misurascape\Assets\acai.png">
-                        <collision-poly>
-                            <point x="0.0901288" y="0.175" />
-                            <point x="0.497854" y="0.0416667" />
-                            <point x="0.948498" y="0.1" />
-                            <point x="0.858369" y="0.5" />
-                            <point x="0.875537" y="0.758333" />
-                            <point x="0.613734" y="0.975" />
-                            <point x="0.317596" y="1" />
-                            <point x="0.133047" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Bost" sid="364747610483001">
             <plugin id="Particles" />
-            <behaviors>
-                <behavior-type name="Solid" sid="679269093214719">
-                    <behavior id="solid" />
-                </behavior-type>
-            </behaviors>
             <container>
                 <type>Palmeira</type>
                 <type>Bost</type>
@@ -489,14 +460,10 @@
                     <frame duration="1" hotspotX="0.507163" hotspotY="0.494118" original-source="E:\projetos\PosUEA\misurascape\Assets\palmeira.png">
                         <image-point name="caxo" x="0.47851" y="0.27395" />
                         <collision-poly>
-                            <point x="0.272206" y="0.151261" />
-                            <point x="0.504298" y="0.0453782" />
-                            <point x="0.796562" y="0.117647" />
-                            <point x="0.681948" y="0.494118" />
-                            <point x="0.461318" y="0.67395" />
-                            <point x="0.504298" y="0.998319" />
-                            <point x="0.421203" y="0.74958" />
-                            <point x="0.277937" y="0.494118" />
+                            <point x="0.326648" y="0.137815" />
+                            <point x="0.702005" y="0.157983" />
+                            <point x="0.673352" y="0.47563" />
+                            <point x="0.30086" y="0.406723" />
                         </collision-poly>
                     </frame>
                 </animation>

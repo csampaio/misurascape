@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Eventsheet1</name>
     <events>
+        <variable constant="0" name="Breath" sid="818680781064281" static="0" type="number">-20</variable>
         <variable constant="0" name="MaxObstTime" sid="816353066657916" static="0" type="number">7</variable>
         <variable constant="0" name="mapinguaScale" sid="136007230488023" static="0" type="number">1</variable>
         <variable constant="0" name="isDead" sid="721843819591116" static="0" type="number">0</variable>
@@ -124,6 +125,14 @@
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="620435103012011" type="Mapinguari">
                             <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="746867780406202" type="System">
+                            <param id="0" name="Variable">Breath</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="794569081158668" type="Sound">
+                            <param id="0" name="Tag">&quot;Respiração&quot;</param>
+                            <param id="1" name="dB">Breath</param>
                         </action>
                     </actions>
                 </event-block>
@@ -263,6 +272,9 @@
                         <action behavior="Bullet" id="0" name="Set speed" sid="596111096093158" type="Obstacle">
                             <param id="0" name="Speed">0</param>
                         </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="617059178463966" type="Palmeira">
+                            <param id="0" name="Speed">0</param>
+                        </action>
                         <action id="-16" name="Wait" sid="957368961994382" type="System">
                             <param id="0" name="Seconds">5</param>
                         </action>
@@ -304,15 +316,11 @@
                         <action id="4" name="Preload" sid="751943638815390" type="Sound">
                             <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
                         </action>
-                        <action id="25" name="Play at object" sid="222971290398847" type="Sound">
+                        <action id="0" name="Play" sid="222971290398847" type="Sound">
                             <param id="0" name="Audio file">Creature Breath 02</param>
-                            <param id="1" name="Loop">1</param>
-                            <param id="2" name="Volume">-50</param>
-                            <param id="3" name="Object">Mapinguari</param>
-                            <param id="4" name="Inner angle">360</param>
-                            <param id="5" name="Outer angle">360</param>
-                            <param id="6" name="Outer gain">0</param>
-                            <param id="7" name="Tag (optional)">&quot;Respiração&quot;</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;Respiração&quot;</param>
                         </action>
                         <action id="0" name="Play" sid="136935434417272" type="Sound">
                             <param id="0" name="Audio file">FFXV_-_Dungeon_Theme</param>
@@ -380,7 +388,7 @@
                             <param id="0" name="Object to create">Palmeira</param>
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="X">1300</param>
-                            <param id="3" name="Y">190</param>
+                            <param id="3" name="Y">222</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="444995586616884" type="Palmeira">
                             <param id="0" name="Speed">-Ground.Bullet.Speed</param>
@@ -394,11 +402,13 @@
                 <event-block sid="291876818909797">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="436624056362758" type="Player">
-                            <param id="0" name="Object">Bost</param>
+                            <param id="0" name="Object">Palmeira</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="843742242494759" type="Bost" />
+                        <action id="-15" name="Set visible" sid="843742242494759" type="Bost">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="559139366877545" type="Mapinguari">
                             <param id="0" name="Speed">-10</param>
                         </action>
@@ -414,20 +424,28 @@
                         <action behavior="Bullet" id="0" name="Set speed" sid="868468338169815" type="Mapinguari">
                             <param id="0" name="Speed">0</param>
                         </action>
+                        <action id="-11" name="Subtract from" sid="613810437758888" type="System">
+                            <param id="0" name="Variable">Breath</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="3" name="Set volume" sid="563512511584050" type="Sound">
+                            <param id="0" name="Tag">&quot;Respiração&quot;</param>
+                            <param id="1" name="dB">Breath</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="848199620472820">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="301687877956719" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="709100830607178" type="Bost">
+                            <param id="0" name="Object">Palmeira</param>
+                            <param id="1" name="Image point (optional)">&quot;caxo&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="848199620472820">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="301687877956719" type="System" />
-            </conditions>
-            <actions>
-                <action id="-4" name="Set position to another object" sid="709100830607178" type="Bost">
-                    <param id="0" name="Object">Palmeira</param>
-                    <param id="1" name="Image point (optional)">&quot;caxo&quot;</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
