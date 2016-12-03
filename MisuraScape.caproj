@@ -12,7 +12,6 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
-        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -22,7 +21,9 @@
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="glowvertical">Glow Vertical</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -32,6 +33,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Splash</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -424,7 +426,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="781932496773224" speed="5">
-                    <frame duration="1" hotspotX="-0.00125" hotspotY="-0.00166667" original-source="E:\projetos\PosUEA\misurascape\Assets\splash.png" />
+                    <frame duration="1" hotspotX="-0.0015625" hotspotY="-0.00208117" original-source="E:\projetos\PosUEA\misurascape\Assets\splash.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -436,14 +438,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Bost" sid="364747610483001">
-            <plugin id="Particles" />
-            <container>
-                <type>Palmeira</type>
-                <type>Bost</type>
-            </container>
-            <texture original-source="E:\projetos\PosUEA\misurascape\Assets\acai1.png" />
-        </object-type>
         <object-type name="Palmeira" sid="251630394656606">
             <plugin id="Sprite" />
             <behaviors>
@@ -453,7 +447,7 @@
             </behaviors>
             <container>
                 <type>Palmeira</type>
-                <type>Bost</type>
+                <type>Cacho</type>
             </container>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="808431198781323" speed="5">
@@ -464,6 +458,34 @@
                             <point x="0.702005" y="0.157983" />
                             <point x="0.673352" y="0.47563" />
                             <point x="0.30086" y="0.406723" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Cacho" sid="118282182656234">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="GlowVertical">
+                    <effect id="glowvertical" />
+                </effect-type>
+            </effects>
+            <container>
+                <type>Palmeira</type>
+                <type>Cacho</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="151082425785399" speed="5">
+                    <frame duration="1" hotspotX="0.977848" hotspotY="0.112565" original-source="E:\projetos\PosUEA\misurascape\Assets\cacho.png">
+                        <collision-poly>
+                            <point x="0.316456" y="0.26178" />
+                            <point x="0.607595" y="0.0732984" />
+                            <point x="0.996835" y="0.0418848" />
+                            <point x="1" y="0.837696" />
+                            <point x="0.677215" y="0.732984" />
+                            <point x="0.5" y="0.89267" />
+                            <point x="0.167721" y="0.748691" />
+                            <point x="0.199367" y="0.455497" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -509,6 +531,8 @@
         <file name="Creature Growl 07.ogg" />
         <file name="wind.m4a" />
         <file name="wind.ogg" />
+        <file name="Açaí3.m4a" />
+        <file name="Açaí3.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="FFXV_-_Dungeon_Theme.m4a" />

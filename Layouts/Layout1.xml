@@ -197,8 +197,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1043.930419922</x>
-                        <y>190.632827759</y>
+                        <x>920.972473145</x>
+                        <y>180.414321899</y>
                         <z>0</z>
                         <width>196.826721191</width>
                         <height>335.564178467</height>
@@ -206,45 +206,6 @@
                         <hotspotX>0.507163346</hotspotX>
                         <hotspotY>0.494117647</hotspotY>
                         <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Bost" uid="13">
-                    <properties>
-                        <rate>50</rate>
-                        <spray-cone>120</spray-cone>
-                        <type>Continuous spray</type>
-                        <initial-particle-properties></initial-particle-properties>
-                        <speed>0</speed>
-                        <size>12</size>
-                        <opacity>100</opacity>
-                        <grow-rate>0</grow-rate>
-                        <x-randomiser>0</x-randomiser>
-                        <y-randomiser>0</y-randomiser>
-                        <speed-randomiser->0</speed-randomiser->
-                        <size-randomiser>10</size-randomiser>
-                        <grow-rate-randomiser>0</grow-rate-randomiser>
-                        <particle-lifetime-properties></particle-lifetime-properties>
-                        <acceleration>-10</acceleration>
-                        <gravity>0</gravity>
-                        <angle-randomiser>0</angle-randomiser>
-                        <speed-randomiser>0</speed-randomiser>
-                        <opacity-randomiser>0</opacity-randomiser>
-                        <destroy-mode>Fade to invisible</destroy-mode>
-                        <timeout>1</timeout>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>1042</x>
-                        <y>107</y>
-                        <z>0</z>
-                        <width>128</width>
-                        <height>128</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>1.5794487</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -321,6 +282,35 @@
                         <depth>0</depth>
                         <hotspotX>0.501057088</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Cacho" uid="12">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="GlowVertical">
+                            <parameters>
+                                <intensity>1</intensity>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>1</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>884.271240234</x>
+                        <y>142.002914429</y>
+                        <z>0</z>
+                        <width>56.462528229</width>
+                        <height>68.255332947</height>
+                        <depth>0</depth>
+                        <hotspotX>0.977848113</hotspotX>
+                        <hotspotY>0.112565443</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

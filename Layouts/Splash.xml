@@ -45,8 +45,8 @@
                         <width>800</width>
                         <height>600</height>
                         <depth>0</depth>
-                        <hotspotX>-0.00125</hotspotX>
-                        <hotspotY>-0.001666667</hotspotY>
+                        <hotspotX>-0.0015625</hotspotX>
+                        <hotspotY>-0.002081166</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

@@ -292,6 +292,37 @@
                         <condition id="-2" name="On start of layout" sid="559864618220340" type="System" />
                     </conditions>
                     <actions>
+                        <action id="4" name="Preload" sid="377857151282112" type="Sound">
+                            <param id="0" name="Audio file">FFXV_-_Dungeon_Theme</param>
+                        </action>
+                        <action id="4" name="Preload" sid="149154560066070" type="Sound">
+                            <param id="0" name="Audio file">Night_Sounds_-_Crickets-Lisa_Redfern-591005346</param>
+                        </action>
+                        <action id="4" name="Preload" sid="751943638815390" type="Sound">
+                            <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
+                        </action>
+                        <action id="0" name="Play" sid="188394726790318" type="Sound">
+                            <param id="0" name="Audio file">Night_Sounds_-_Crickets-Lisa_Redfern-591005346</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-50</param>
+                            <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
+                        </action>
+                        <action id="23" name="Seek to" sid="419155316669906" type="Sound">
+                            <param id="0" name="Tag">&quot;Respiração&quot;</param>
+                            <param id="1" name="Position">5</param>
+                        </action>
+                        <action id="0" name="Play" sid="222971290398847" type="Sound">
+                            <param id="0" name="Audio file">Creature Breath 02</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;Respiração&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="136935434417272" type="Sound">
+                            <param id="0" name="Audio file">FFXV_-_Dungeon_Theme</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Musica&quot;</param>
+                        </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="336729587582744" type="Player">
                             <param id="0" name="Speed">200</param>
                         </action>
@@ -307,26 +338,9 @@
                         <action behavior="Bullet" id="0" name="Set speed" sid="185677326792876" type="Mapinguari">
                             <param id="0" name="Speed">0</param>
                         </action>
-                        <action id="0" name="Play" sid="188394726790318" type="Sound">
-                            <param id="0" name="Audio file">Night_Sounds_-_Crickets-Lisa_Redfern-591005346</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">-50</param>
-                            <param id="1" name="Tag (optional)">&quot;Ambient&quot;</param>
-                        </action>
-                        <action id="4" name="Preload" sid="751943638815390" type="Sound">
-                            <param id="0" name="Audio file">Grunts (as Punched)  Male</param>
-                        </action>
-                        <action id="0" name="Play" sid="222971290398847" type="Sound">
-                            <param id="0" name="Audio file">Creature Breath 02</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">-10</param>
-                            <param id="1" name="Tag (optional)">&quot;Respiração&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="136935434417272" type="Sound">
-                            <param id="0" name="Audio file">FFXV_-_Dungeon_Theme</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;Musica&quot;</param>
+                        <action id="23" name="Seek to" sid="793377641478133" type="Sound">
+                            <param id="0" name="Tag">&quot;Ambient&quot;</param>
+                            <param id="1" name="Position">5</param>
                         </action>
                     </actions>
                 </event-block>
@@ -386,14 +400,14 @@
                     <actions>
                         <action id="-3" name="Create object" sid="908410115760839" type="System">
                             <param id="0" name="Object to create">Palmeira</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="X">1300</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">1200</param>
                             <param id="3" name="Y">222</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="444995586616884" type="Palmeira">
                             <param id="0" name="Speed">-Ground.Bullet.Speed</param>
                         </action>
-                        <action id="-4" name="Set position to another object" sid="104278217673559" type="Bost">
+                        <action id="-4" name="Set position to another object" sid="104278217673559" type="Cacho">
                             <param id="0" name="Object">Palmeira</param>
                             <param id="1" name="Image point (optional)">&quot;caxo&quot;</param>
                         </action>
@@ -406,7 +420,13 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-15" name="Set visible" sid="843742242494759" type="Bost">
+                        <action id="0" name="Play" sid="811781458732284" type="Sound">
+                            <param id="0" name="Audio file">Açaí3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Açai&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="843742242494759" type="Cacho">
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="559139366877545" type="Mapinguari">
@@ -439,7 +459,7 @@
                         <condition id="-1" name="Every tick" sid="301687877956719" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set position to another object" sid="709100830607178" type="Bost">
+                        <action id="-4" name="Set position to another object" sid="709100830607178" type="Cacho">
                             <param id="0" name="Object">Palmeira</param>
                             <param id="1" name="Image point (optional)">&quot;caxo&quot;</param>
                         </action>
