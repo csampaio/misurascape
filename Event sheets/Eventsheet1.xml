@@ -238,7 +238,7 @@
                     <actions>
                         <action id="-10" name="Add to" sid="128659399925677" type="System">
                             <param id="0" name="Variable">mapinguaScale</param>
-                            <param id="1" name="Value">0.25</param>
+                            <param id="1" name="Value">0.10</param>
                         </action>
                         <action id="9" name="Set scale" sid="247713087912208" type="Mapinguari">
                             <param id="0" name="Scale">MapinguaScale</param>
