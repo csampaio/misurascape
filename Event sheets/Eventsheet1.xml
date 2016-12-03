@@ -283,10 +283,16 @@
                         <action behavior="Bullet" id="0" name="Set speed" sid="336729587582744" type="Player">
                             <param id="0" name="Speed">200</param>
                         </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="623401357611838" type="Mapinguari">
+                            <param id="0" name="Speed">50</param>
+                        </action>
                         <action id="-16" name="Wait" sid="168968039426796" type="System">
                             <param id="0" name="Seconds">2</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="197075595726560" type="Player">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="185677326792876" type="Mapinguari">
                             <param id="0" name="Speed">0</param>
                         </action>
                         <action id="0" name="Play" sid="188394726790318" type="Sound">
@@ -301,7 +307,7 @@
                         <action id="25" name="Play at object" sid="222971290398847" type="Sound">
                             <param id="0" name="Audio file">Creature Breath 02</param>
                             <param id="1" name="Loop">1</param>
-                            <param id="2" name="Volume">0</param>
+                            <param id="2" name="Volume">-50</param>
                             <param id="3" name="Object">Mapinguari</param>
                             <param id="4" name="Inner angle">360</param>
                             <param id="5" name="Outer angle">360</param>
