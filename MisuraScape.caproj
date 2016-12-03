@@ -363,6 +363,38 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite2" sid="359677226424847">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="439827818211876" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Acai" sid="236341940923620">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="771673219592495">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="527056365886305" speed="5">
+                    <frame duration="1" hotspotX="0.502146" hotspotY="0.5" original-source="G:\Pós Games\misurascape\Assets\acai.png">
+                        <collision-poly>
+                            <point x="0.0901288" y="0.175" />
+                            <point x="0.497854" y="0.0416667" />
+                            <point x="0.948498" y="0.1" />
+                            <point x="0.858369" y="0.5" />
+                            <point x="0.875537" y="0.758333" />
+                            <point x="0.613734" y="0.975" />
+                            <point x="0.317596" y="1" />
+                            <point x="0.133047" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>

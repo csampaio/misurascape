@@ -361,5 +361,52 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="235088578238719" title="Acai">
+            <sub-events>
+                <event-block sid="466246490752020">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="870779218720926" type="System">
+                            <param id="0" name="Interval (seconds)">random(10, 20)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="908410115760839" type="System">
+                            <param id="0" name="Object to create">Acai</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">1358</param>
+                            <param id="3" name="Y">259</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="323110340531012" type="Acai">
+                            <param id="0" name="Speed">Ground.Bullet.Speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="291876818909797">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="436624056362758" type="Player">
+                            <param id="0" name="Object">Acai</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="843742242494759" type="Acai" />
+                        <action behavior="Bullet" id="0" name="Set speed" sid="559139366877545" type="Mapinguari">
+                            <param id="0" name="Speed">-10</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="348734693584404" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="232948442599551" type="Mapinguari">
+                            <param id="0" name="Speed">-1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="100526525676821" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="868468338169815" type="Mapinguari">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
